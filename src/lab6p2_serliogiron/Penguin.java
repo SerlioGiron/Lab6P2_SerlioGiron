@@ -19,6 +19,13 @@ public class Penguin {
     ArrayList <Item> items = new ArrayList();
     Casa casa;
 
+    @Override
+    public String toString() {
+        return "Penguin[ " + "nombre=" + nombre + ']';
+    }
+    
+    
+
     public String getNombre() {
         return nombre;
     }

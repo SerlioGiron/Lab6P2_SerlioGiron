@@ -16,6 +16,12 @@ public class Puffle {
     double precio;
     Color color;
 
+    @Override
+    public String toString() {
+        return "Puffle[ " + "nombre=" + nombre + ", precio=" + precio + ", color=" + color + ']';
+    }
+    
+    
     public String getNombre() {
         return nombre;
     }

@@ -18,6 +18,13 @@ public class Casa {
     int coordenadaY;
     ArrayList <Puffle> puffles = new ArrayList();
 
+    @Override
+    public String toString() {
+        return "Casa[ " + "tamano=" + tamano + ", costo=" + costo + ", coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + ", puffles=" + puffles + ']';
+    }
+    
+    
+
     public double getTamano() {
         return tamano;
     }

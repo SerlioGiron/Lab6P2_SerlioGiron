@@ -14,6 +14,13 @@ public class Item {
     double precio;
     String tipo;
 
+    @Override
+    public String toString() {
+        return "Item [" + "nombre=" + nombre + ", precio=" + precio + ", tipo=" + tipo + ']';
+    }
+    
+    
+
     public String getNombre() {
         return nombre;
     }
