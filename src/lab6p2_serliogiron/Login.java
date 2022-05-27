@@ -45,7 +45,18 @@ public class Login extends javax.swing.JFrame {
         nombre_items_textfield = new javax.swing.JTextField();
         Casa = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_casa = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        casa_nombre_field = new javax.swing.JTextField();
+        casa_tamano_field = new javax.swing.JFormattedTextField();
+        casa_costo_field = new javax.swing.JFormattedTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        casa_x_field = new javax.swing.JFormattedTextField();
+        casa_y_field = new javax.swing.JFormattedTextField();
+        guardar_casa_boton = new javax.swing.JButton();
         Mi_Casa = new javax.swing.JPanel();
         Juego = new javax.swing.JPanel();
         usuario_frame = new javax.swing.JFrame();
@@ -150,7 +161,7 @@ public class Login extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Items", Items);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_casa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -173,13 +184,79 @@ public class Login extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabla_casa);
+
+        jLabel5.setText("Nombre");
+
+        jLabel6.setText("Tamaño");
+
+        jLabel7.setText("Costo");
+
+        casa_nombre_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casa_nombre_fieldActionPerformed(evt);
+            }
+        });
+
+        casa_tamano_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casa_tamano_fieldActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("X");
+
+        jLabel9.setText("Y");
+
+        casa_x_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        casa_y_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        casa_y_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casa_y_fieldActionPerformed(evt);
+            }
+        });
+
+        guardar_casa_boton.setText("Guardar");
+        guardar_casa_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guardar_casa_botonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CasaLayout = new javax.swing.GroupLayout(Casa);
         Casa.setLayout(CasaLayout);
         CasaLayout.setHorizontalGroup(
             CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
+            .addGroup(CasaLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(CasaLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(casa_x_field, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9))
+                    .addGroup(CasaLayout.createSequentialGroup()
+                        .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(casa_nombre_field, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(casa_tamano_field, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CasaLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(casa_costo_field, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(CasaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(casa_y_field, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(guardar_casa_boton)))
+                .addContainerGap(86, Short.MAX_VALUE))
             .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
                     .addContainerGap(39, Short.MAX_VALUE)
@@ -188,7 +265,25 @@ public class Login extends javax.swing.JFrame {
         );
         CasaLayout.setVerticalGroup(
             CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
+                .addContainerGap(256, Short.MAX_VALUE)
+                .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(casa_nombre_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casa_tamano_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casa_costo_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(casa_x_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casa_y_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(guardar_casa_boton))
+                .addGap(25, 25, 25))
             .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
                     .addContainerGap(12, Short.MAX_VALUE)
@@ -414,6 +509,33 @@ public class Login extends javax.swing.JFrame {
         tabla_items.setModel(model);
     }//GEN-LAST:event_Guardar_items_botonMouseClicked
 
+    private void casa_nombre_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casa_nombre_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casa_nombre_fieldActionPerformed
+
+    private void casa_tamano_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casa_tamano_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casa_tamano_fieldActionPerformed
+
+    private void casa_y_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casa_y_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casa_y_fieldActionPerformed
+
+    private void guardar_casa_botonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardar_casa_botonMouseClicked
+        DefaultTableModel model = (DefaultTableModel) tabla_casa.getModel();
+        
+        Object[]datos = new Object[5];
+        
+        datos [0] = casa_nombre_field.getText();
+        datos [1] = Double.parseDouble(casa_tamano_field.getText());
+        datos [2] = Double.parseDouble(casa_costo_field.getText());
+        datos [3] = Integer.parseInt(casa_x_field.getText());
+        datos [4] = Integer.parseInt(casa_y_field.getText());
+        
+        model.addRow(datos);
+        tabla_casa.setModel(model);
+    }//GEN-LAST:event_guardar_casa_botonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -458,12 +580,23 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField Precio_field_items;
     private javax.swing.JComboBox<String> Tipo_items_ComboBox;
     private javax.swing.JFrame admin_frame;
+    private javax.swing.JFormattedTextField casa_costo_field;
+    private javax.swing.JTextField casa_nombre_field;
+    private javax.swing.JFormattedTextField casa_tamano_field;
+    private javax.swing.JFormattedTextField casa_x_field;
+    private javax.swing.JFormattedTextField casa_y_field;
     private javax.swing.JPasswordField contra_field;
     private javax.swing.JButton entrar_boton;
+    private javax.swing.JButton guardar_casa_boton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -472,11 +605,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label2;
     private javax.swing.JTextField nombre_field;
     private javax.swing.JTextField nombre_items_textfield;
+    private javax.swing.JTable tabla_casa;
     private javax.swing.JTable tabla_items;
     private javax.swing.JFrame usuario_frame;
     // End of variables declaration//GEN-END:variables
