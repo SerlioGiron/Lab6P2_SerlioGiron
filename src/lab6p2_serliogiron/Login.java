@@ -5,6 +5,9 @@
  */
 package lab6p2_serliogiron;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author usuario
@@ -27,11 +30,187 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        admin_frame = new javax.swing.JFrame();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        Items = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        Casa = new javax.swing.JPanel();
+        Mi_Casa = new javax.swing.JPanel();
+        Juego = new javax.swing.JPanel();
+        usuario_frame = new javax.swing.JFrame();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         contra_field = new javax.swing.JTextField();
         nombre_field = new javax.swing.JTextField();
+        entrar_boton = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout ItemsLayout = new javax.swing.GroupLayout(Items);
+        Items.setLayout(ItemsLayout);
+        ItemsLayout.setHorizontalGroup(
+            ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+            .addGroup(ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ItemsLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        ItemsLayout.setVerticalGroup(
+            ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+            .addGroup(ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ItemsLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Items", Items);
+
+        javax.swing.GroupLayout CasaLayout = new javax.swing.GroupLayout(Casa);
+        Casa.setLayout(CasaLayout);
+        CasaLayout.setHorizontalGroup(
+            CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+        );
+        CasaLayout.setVerticalGroup(
+            CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Casa", Casa);
+
+        javax.swing.GroupLayout Mi_CasaLayout = new javax.swing.GroupLayout(Mi_Casa);
+        Mi_Casa.setLayout(Mi_CasaLayout);
+        Mi_CasaLayout.setHorizontalGroup(
+            Mi_CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+        );
+        Mi_CasaLayout.setVerticalGroup(
+            Mi_CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Mi casa", Mi_Casa);
+
+        javax.swing.GroupLayout JuegoLayout = new javax.swing.GroupLayout(Juego);
+        Juego.setLayout(JuegoLayout);
+        JuegoLayout.setHorizontalGroup(
+            JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+        );
+        JuegoLayout.setVerticalGroup(
+            JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Juego", Juego);
+
+        javax.swing.GroupLayout admin_frameLayout = new javax.swing.GroupLayout(admin_frame.getContentPane());
+        admin_frame.getContentPane().setLayout(admin_frameLayout);
+        admin_frameLayout.setHorizontalGroup(
+            admin_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(admin_frameLayout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
+        );
+        admin_frameLayout.setVerticalGroup(
+            admin_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(admin_frameLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 364, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Items", jPanel5);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 364, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Casa", jPanel6);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 364, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Mi casa", jPanel7);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 531, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 364, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Juego", jPanel8);
+
+        javax.swing.GroupLayout usuario_frameLayout = new javax.swing.GroupLayout(usuario_frame.getContentPane());
+        usuario_frame.getContentPane().setLayout(usuario_frameLayout);
+        usuario_frameLayout.setHorizontalGroup(
+            usuario_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(usuario_frameLayout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
+        );
+        usuario_frameLayout.setVerticalGroup(
+            usuario_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(usuario_frameLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,6 +224,13 @@ public class Login extends javax.swing.JFrame {
         nombre_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombre_fieldActionPerformed(evt);
+            }
+        });
+
+        entrar_boton.setText("Entrar");
+        entrar_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                entrar_botonMouseClicked(evt);
             }
         });
 
@@ -63,7 +249,10 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(nombre_field)
-                            .addComponent(contra_field, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))))
+                            .addComponent(contra_field, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(entrar_boton)))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -79,7 +268,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contra_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(entrar_boton)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -88,6 +279,30 @@ public class Login extends javax.swing.JFrame {
     private void nombre_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_fieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombre_fieldActionPerformed
+
+    private void entrar_botonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrar_botonMouseClicked
+        
+        String nombre = nombre_field.getText();
+        
+        String contra = contra_field.getText();
+
+        Penguin p = new Penguin(nombre, contra);
+        
+        if (p.getNombre().equals("p")) {
+            if (p.getContr().equals("p")) {
+                JOptionPane.showMessageDialog(this, "Hola Admin");
+                admin_frame.pack();
+                admin_frame.setVisible(true);
+            }
+        }else{
+            pinguinos.add(p);
+            
+            JOptionPane.showMessageDialog(this, "Ingresado");
+            
+            usuario_frame.pack();
+            usuario_frame.setVisible(true);
+        }
+    }//GEN-LAST:event_entrar_botonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -125,10 +340,27 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Casa;
+    private javax.swing.JPanel Items;
+    private javax.swing.JPanel Juego;
+    private javax.swing.JPanel Mi_Casa;
+    private javax.swing.JFrame admin_frame;
     private javax.swing.JTextField contra_field;
+    private javax.swing.JButton entrar_boton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField nombre_field;
+    private javax.swing.JFrame usuario_frame;
     // End of variables declaration//GEN-END:variables
+
+    private ArrayList <Penguin> pinguinos = new ArrayList();
 }

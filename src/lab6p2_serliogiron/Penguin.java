@@ -13,11 +13,23 @@ import java.util.ArrayList;
  */
 public class Penguin {
     String nombre;
-    String contr;
+    String contra;
     boolean socio;
     double dinero;
     ArrayList <Item> items = new ArrayList();
-    Casa casa;
+    ArrayList <Casa> casas = new ArrayList();
+
+    public Penguin() {
+    }
+
+    public Penguin(String nombre, String contra) {
+        this.nombre = nombre;
+        this.contra = contra;
+        this.socio = false;
+        this.dinero = 1000;
+    }
+    
+    
 
     @Override
     public String toString() {
@@ -35,11 +47,11 @@ public class Penguin {
     }
 
     public String getContr() {
-        return contr;
+        return contra;
     }
 
     public void setContr(String contr) {
-        this.contr = contr;
+        this.contra = contr;
     }
 
     public boolean isSocio() {
@@ -64,14 +76,6 @@ public class Penguin {
 
     public void setItems(ArrayList<Item> items) {
         this.items = items;
-    }
-
-    public Casa getCasa() {
-        return casa;
-    }
-
-    public void setCasa(Casa casa) {
-        this.casa = casa;
     }
     
     
