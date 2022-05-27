@@ -7,6 +7,7 @@ package lab6p2_serliogiron;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,8 +35,17 @@ public class Login extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Items = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_items = new javax.swing.JTable();
+        label = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Tipo_items_ComboBox = new javax.swing.JComboBox<>();
+        Guardar_items_boton = new javax.swing.JButton();
+        Precio_field_items = new javax.swing.JFormattedTextField();
+        nombre_items_textfield = new javax.swing.JTextField();
         Casa = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Mi_Casa = new javax.swing.JPanel();
         Juego = new javax.swing.JPanel();
         usuario_frame = new javax.swing.JFrame();
@@ -47,55 +57,143 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        contra_field = new javax.swing.JTextField();
         nombre_field = new javax.swing.JTextField();
         entrar_boton = new javax.swing.JButton();
+        contra_field = new javax.swing.JPasswordField();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_items.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Tipo", "Precio"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabla_items);
+
+        label.setText("Nombre");
+
+        label2.setText("Precio");
+
+        jLabel4.setText("Tipo");
+
+        Tipo_items_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sombrero", "Gafa", "Bufanda", "Chaqueta", "Pantalon", "Zapato" }));
+
+        Guardar_items_boton.setText("Guardar");
+        Guardar_items_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Guardar_items_botonMouseClicked(evt);
+            }
+        });
+
+        Precio_field_items.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
         javax.swing.GroupLayout ItemsLayout = new javax.swing.GroupLayout(Items);
         Items.setLayout(ItemsLayout);
         ItemsLayout.setHorizontalGroup(
             ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
-            .addGroup(ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ItemsLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(ItemsLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addGroup(ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ItemsLayout.createSequentialGroup()
+                        .addComponent(Guardar_items_boton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(ItemsLayout.createSequentialGroup()
+                        .addGroup(ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label)
+                            .addComponent(label2)
+                            .addComponent(jLabel4)
+                            .addComponent(Tipo_items_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Precio_field_items)
+                            .addComponent(nombre_items_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))
+                        .addGap(100, 100, 100))))
         );
         ItemsLayout.setVerticalGroup(
             ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
-            .addGroup(ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ItemsLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(ItemsLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(ItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ItemsLayout.createSequentialGroup()
+                        .addComponent(label)
+                        .addGap(18, 18, 18)
+                        .addComponent(nombre_items_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(label2)
+                        .addGap(18, 18, 18)
+                        .addComponent(Precio_field_items, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Tipo_items_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(45, 45, 45)
+                .addComponent(Guardar_items_boton)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Items", Items);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Tamaño", "Costo", "X", "Y"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout CasaLayout = new javax.swing.GroupLayout(Casa);
         Casa.setLayout(CasaLayout);
         CasaLayout.setHorizontalGroup(
             CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 531, Short.MAX_VALUE)
+            .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
+                    .addContainerGap(39, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(40, Short.MAX_VALUE)))
         );
         CasaLayout.setVerticalGroup(
             CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 367, Short.MAX_VALUE)
+            .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
+                    .addContainerGap(12, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(159, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Casa", Casa);
@@ -266,9 +364,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(nombre_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(contra_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(26, 26, 26)
                 .addComponent(entrar_boton)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
@@ -303,6 +401,18 @@ public class Login extends javax.swing.JFrame {
             usuario_frame.setVisible(true);
         }
     }//GEN-LAST:event_entrar_botonMouseClicked
+
+    private void Guardar_items_botonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Guardar_items_botonMouseClicked
+        DefaultTableModel model = (DefaultTableModel) tabla_items.getModel();
+        
+        Object[]datos = new Object[3];
+        datos [0] = nombre_items_textfield.getText();
+        datos [2] = Double.parseDouble(Precio_field_items.getText());
+        datos [1] = Tipo_items_ComboBox.getSelectedItem();
+        
+        model.addRow(datos);
+        tabla_items.setModel(model);
+    }//GEN-LAST:event_Guardar_items_botonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -341,24 +451,33 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Casa;
+    private javax.swing.JButton Guardar_items_boton;
     private javax.swing.JPanel Items;
     private javax.swing.JPanel Juego;
     private javax.swing.JPanel Mi_Casa;
+    private javax.swing.JFormattedTextField Precio_field_items;
+    private javax.swing.JComboBox<String> Tipo_items_ComboBox;
     private javax.swing.JFrame admin_frame;
-    private javax.swing.JTextField contra_field;
+    private javax.swing.JPasswordField contra_field;
     private javax.swing.JButton entrar_boton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel label;
+    private javax.swing.JLabel label2;
     private javax.swing.JTextField nombre_field;
+    private javax.swing.JTextField nombre_items_textfield;
+    private javax.swing.JTable tabla_items;
     private javax.swing.JFrame usuario_frame;
     // End of variables declaration//GEN-END:variables
 

@@ -14,6 +14,17 @@ public class Item {
     double precio;
     String tipo;
 
+    public Item() {
+    }
+
+    public Item(String nombre, double precio, String tipo) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.tipo = tipo;
+    }
+    
+    
+
     @Override
     public String toString() {
         return "Item [" + "nombre=" + nombre + ", precio=" + precio + ", tipo=" + tipo + ']';
