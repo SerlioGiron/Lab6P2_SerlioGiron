@@ -86,7 +86,7 @@ public class Login extends javax.swing.JFrame {
         usuario_items = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         usuario_items_tabla_left = new javax.swing.JTable();
-        Comprar = new javax.swing.JButton();
+        Comprar_usuario_items = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         usuario_tabla = new javax.swing.JTable();
         usuario_casa = new javax.swing.JPanel();
@@ -174,7 +174,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(Tipo_items_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Precio_field_items)
-                            .addComponent(nombre_items_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
+                            .addComponent(nombre_items_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))
                         .addGap(100, 100, 100))))
         );
         ItemsLayout.setVerticalGroup(
@@ -197,7 +197,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(Tipo_items_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(45, 45, 45)
                 .addComponent(Guardar_items_boton)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Items", Items);
@@ -297,17 +297,17 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(casa_y_field, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
                         .addComponent(guardar_casa_boton)))
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
             .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
-                    .addContainerGap(105, Short.MAX_VALUE)
+                    .addContainerGap(40, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(105, Short.MAX_VALUE)))
+                    .addContainerGap(39, Short.MAX_VALUE)))
         );
         CasaLayout.setVerticalGroup(
             CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
-                .addContainerGap(256, Short.MAX_VALUE)
+                .addContainerGap(253, Short.MAX_VALUE)
                 .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
@@ -327,9 +327,9 @@ public class Login extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
             .addGroup(CasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CasaLayout.createSequentialGroup()
-                    .addContainerGap(12, Short.MAX_VALUE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(159, Short.MAX_VALUE)))
+                    .addContainerGap(157, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Casa", Casa);
@@ -410,7 +410,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(puffles_nombre_field, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                         .addComponent(puffles_precio_field))
                     .addComponent(boton_color, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         PufflesLayout.setVerticalGroup(
             PufflesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,7 +432,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18)
                 .addComponent(puffles_precio_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(guardar_puffles)
                 .addGap(44, 44, 44))
         );
@@ -492,7 +492,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JuegoLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel15)
                     .addComponent(jLabel14)
@@ -529,7 +529,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Juego", Juego);
@@ -576,10 +576,10 @@ public class Login extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(usuario_items_tabla_left);
 
-        Comprar.setText("Comprar");
-        Comprar.addMouseListener(new java.awt.event.MouseAdapter() {
+        Comprar_usuario_items.setText("Comprar");
+        Comprar_usuario_items.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ComprarMouseClicked(evt);
+                Comprar_usuario_itemsMouseClicked(evt);
             }
         });
 
@@ -617,13 +617,13 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(usuario_itemsLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(usuario_itemsLayout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(Comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(71, Short.MAX_VALUE))))
+                        .addComponent(Comprar_usuario_items, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(71, Short.MAX_VALUE))
+                    .addGroup(usuario_itemsLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         usuario_itemsLayout.setVerticalGroup(
             usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,8 +631,8 @@ public class Login extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addGroup(usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(usuario_itemsLayout.createSequentialGroup()
-                        .addComponent(Comprar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Comprar_usuario_items)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(91, Short.MAX_VALUE))
@@ -889,12 +889,10 @@ public class Login extends javax.swing.JFrame {
 
         Penguin p = new Penguin(nombre, contra);
         
-        if (p.getNombre().equals("p")) {
-            if (p.getContr().equals("p")) {
-                JOptionPane.showMessageDialog(this, "Hola Admin");
-                admin_frame.pack();
-                admin_frame.setVisible(true);
-            }
+        if (p.getNombre().equals("p") && p.getContr().equals("p")) {
+            JOptionPane.showMessageDialog(this, "Hola Admin");
+            admin_frame.pack();
+            admin_frame.setVisible(true);
         }else{
             pinguinos.add(p);
             
@@ -990,17 +988,17 @@ public class Login extends javax.swing.JFrame {
         juego_tabla.setModel(model);
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void ComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComprarMouseClicked
-        DefaultTableModel model = (DefaultTableModel) usuario_tabla_micasa_left.getModel();
+    private void Comprar_usuario_itemsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Comprar_usuario_itemsMouseClicked
+        DefaultTableModel model = (DefaultTableModel) usuario_items_tabla_left.getModel();
         Object[]datos = new Object[2];
         
-        datos [0] = usuario_tabla_micasa_right.getValueAt(usuario_tabla_micasa_right.getSelectedRow(), 0);
+        datos [0] = usuario_tabla.getValueAt(usuario_tabla.getSelectedRow(), 0);
         
-        datos [1] = usuario_tabla_micasa_right.getValueAt(usuario_tabla_micasa_right.getSelectedRow(), 1);
+        datos [1] = usuario_tabla.getValueAt(usuario_tabla.getSelectedRow(), 1);
         
         model.addRow(datos);
-        usuario_tabla_micasa_left.setModel(model);
-    }//GEN-LAST:event_ComprarMouseClicked
+        usuario_items_tabla_left.setModel(model);
+    }//GEN-LAST:event_Comprar_usuario_itemsMouseClicked
 
     private void Guardar_items_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Guardar_items_botonActionPerformed
         // TODO add your handling code here:
@@ -1056,7 +1054,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Casa;
-    private javax.swing.JButton Comprar;
+    private javax.swing.JButton Comprar_usuario_items;
     private javax.swing.JButton Guardar_items_boton;
     private javax.swing.JPanel Items;
     private javax.swing.JPanel Juego;
