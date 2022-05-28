@@ -101,6 +101,9 @@ public class Login extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         usuario_tabla_micasa_right = new javax.swing.JTable();
         usuario_Juego = new javax.swing.JPanel();
+        jugar_juego = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        usuario_tabla_juego = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -783,15 +786,55 @@ public class Login extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Mi casa", ususario_Micasa);
 
+        jugar_juego.setText("Jugar");
+
+        usuario_tabla_juego.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Costo", "Recompensa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane10.setViewportView(usuario_tabla_juego);
+
         javax.swing.GroupLayout usuario_JuegoLayout = new javax.swing.GroupLayout(usuario_Juego);
         usuario_Juego.setLayout(usuario_JuegoLayout);
         usuario_JuegoLayout.setHorizontalGroup(
             usuario_JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
+            .addGroup(usuario_JuegoLayout.createSequentialGroup()
+                .addGroup(usuario_JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(usuario_JuegoLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jugar_juego))
+                    .addGroup(usuario_JuegoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         usuario_JuegoLayout.setVerticalGroup(
             usuario_JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
+            .addGroup(usuario_JuegoLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jugar_juego)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Juego", usuario_Juego);
@@ -883,6 +926,8 @@ public class Login extends javax.swing.JFrame {
 
     private void entrar_botonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrar_botonMouseClicked
         
+        
+        
         String nombre = nombre_field.getText();
         
         String contra = contra_field.getText();
@@ -894,12 +939,27 @@ public class Login extends javax.swing.JFrame {
             admin_frame.pack();
             admin_frame.setVisible(true);
         }else{
-            pinguinos.add(p);
+            
+            if (checkealistboolean(nombre, contra) == true) {
+                usuario = checkealistusuario(nombre, contra);
+            }else{
+                usuario = p;
+            }
+            
+            pinguinos.add(usuario);
             
             JOptionPane.showMessageDialog(this, "Ingresado");
             
             usuario_frame.pack();
             usuario_frame.setVisible(true);
+        }
+        
+        while (usuario_items_tabla_left.getModel().getRowCount()>=0) {            
+            usuario_items_tabla_left.remove(0);
+        }
+        
+        while (usuario_tabla_micasa_left.getModel().getRowCount()>=0) {            
+            usuario_tabla_micasa_left.remove(0);
         }
     }//GEN-LAST:event_entrar_botonMouseClicked
 
@@ -986,11 +1046,22 @@ public class Login extends javax.swing.JFrame {
         
         model.addRow(datos);
         juego_tabla.setModel(model);
+        usuario_tabla_juego.setModel(model);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void Comprar_usuario_itemsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Comprar_usuario_itemsMouseClicked
         DefaultTableModel model = (DefaultTableModel) usuario_items_tabla_left.getModel();
+        
         Object[]datos = new Object[2];
+        
+        for (int i = 0; i < usuario.items.size(); i++) 
+        {
+            datos [0] = usuario.getItems().get(i).getNombre();//nombre
+        
+            datos [1] = usuario.getItems().get(i).getTipo();//tipo
+            
+            model.addRow(datos);
+        }
         
         datos [0] = usuario_tabla.getValueAt(usuario_tabla.getSelectedRow(), 0);
         
@@ -1051,6 +1122,64 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
+    
+    public boolean checkealistboolean(String nombre, String contra){
+        
+        Penguin temporal = new Penguin(nombre, contra);
+        
+        int cont = 0;
+        boolean encontrado = false;
+        
+        Penguin puntero = new Penguin();
+        
+        while (cont < pinguinos.size() && encontrado == false) {            
+            
+            puntero = pinguinos.get(cont);
+            
+            if (puntero.getNombre().equals(temporal.getNombre())  &&  puntero.getContr().equals(temporal.getContr())) 
+            {
+                encontrado = true;
+                break;
+            }
+            
+            cont++;
+        }
+        
+        return encontrado;
+    }
+    
+    public Penguin checkealistusuario(String nombre, String contra){
+        
+        Penguin temporal = new Penguin(nombre, contra);
+        
+        int cont = 0;
+        boolean encontrado = false;
+        
+        Penguin puntero = new Penguin();
+        
+        while (cont < pinguinos.size() && encontrado == false) {            
+            
+            puntero = pinguinos.get(cont);
+            
+            if (puntero.getNombre().equals(temporal.getNombre())  &&  puntero.getContr().equals(temporal.getContr())) 
+            {
+                encontrado = true;
+                break;
+            }
+            
+            cont++;
+        }
+        
+        if (encontrado == true) {
+            return pinguinos.get(cont);
+        }else{
+            return temporal;
+        }
+    }
+    
+    //variables nuevas
+    private ArrayList <Penguin> pinguinos = new ArrayList();
+    private Penguin usuario;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Casa;
@@ -1093,6 +1222,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1108,6 +1238,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField juego_probabilidad;
     private javax.swing.JFormattedTextField juego_recompensa;
     private javax.swing.JTable juego_tabla;
+    private javax.swing.JButton jugar_juego;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label2;
     private javax.swing.JTextField nombre_field;
@@ -1124,10 +1255,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTable usuario_items_tabla_left;
     private javax.swing.JTable usuario_tabla;
     private javax.swing.JTable usuario_tabla_casas;
+    private javax.swing.JTable usuario_tabla_juego;
     private javax.swing.JTable usuario_tabla_micasa_left;
     private javax.swing.JTable usuario_tabla_micasa_right;
     private javax.swing.JPanel ususario_Micasa;
     // End of variables declaration//GEN-END:variables
 
-    private ArrayList <Penguin> pinguinos = new ArrayList();
 }
