@@ -6,7 +6,9 @@
 package lab6p2_serliogiron;
 
 import java.awt.Color;
+import static java.lang.Math.random;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author usuario
  */
 public class Login extends javax.swing.JFrame {
-
+static Random random = new Random();
     /**
      * Creates new form Login
      */
@@ -83,27 +85,36 @@ public class Login extends javax.swing.JFrame {
         juego_tabla = new javax.swing.JTable();
         usuario_frame = new javax.swing.JFrame();
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        usuario_items = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        usuario_items_tabla_left = new javax.swing.JTable();
-        Comprar_usuario_items = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        usuario_tabla = new javax.swing.JTable();
         usuario_casa = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         usuario_tabla_casas = new javax.swing.JTable();
+        premium3 = new javax.swing.JButton();
+        Dinero2 = new javax.swing.JLabel();
         ususario_Micasa = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         usuario_tabla_micasa_left = new javax.swing.JTable();
         boton_comprar_micasa = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         usuario_tabla_micasa_right = new javax.swing.JTable();
+        premium2 = new javax.swing.JButton();
+        Dinero3 = new javax.swing.JLabel();
+        usuario_items = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        usuario_items_tabla_left = new javax.swing.JTable();
+        Comprar_usuario_items = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        usuario_tabla = new javax.swing.JTable();
+        Premium4 = new javax.swing.JButton();
+        Dinero1 = new javax.swing.JLabel();
         usuario_Juego = new javax.swing.JPanel();
         jugar_juego = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         usuario_tabla_juego = new javax.swing.JTable();
+        label_juego = new javax.swing.JLabel();
+        dinero_juego = new javax.swing.JLabel();
+        premium1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -554,96 +565,12 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
-        usuario_items_tabla_left.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Tipo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                true, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane5.setViewportView(usuario_items_tabla_left);
-
-        Comprar_usuario_items.setText("Comprar");
-        Comprar_usuario_items.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Comprar_usuario_itemsMouseClicked(evt);
-            }
-        });
-
-        usuario_tabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Precio", "Tipo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane6.setViewportView(usuario_tabla);
-
-        javax.swing.GroupLayout usuario_itemsLayout = new javax.swing.GroupLayout(usuario_items);
-        usuario_items.setLayout(usuario_itemsLayout);
-        usuario_itemsLayout.setHorizontalGroup(
-            usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(usuario_itemsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(usuario_itemsLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(Comprar_usuario_items, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(71, Short.MAX_VALUE))
-                    .addGroup(usuario_itemsLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())))
-        );
-        usuario_itemsLayout.setVerticalGroup(
-            usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(usuario_itemsLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addGroup(usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(usuario_itemsLayout.createSequentialGroup()
-                        .addComponent(Comprar_usuario_items)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("Items", usuario_items);
-
         jButton2.setText("Comprar Casa");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Vender Casa");
 
@@ -672,30 +599,47 @@ public class Login extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(usuario_tabla_casas);
 
+        premium3.setText("Premium");
+
+        Dinero2.setText("jLabel17");
+
         javax.swing.GroupLayout usuario_casaLayout = new javax.swing.GroupLayout(usuario_casa);
         usuario_casa.setLayout(usuario_casaLayout);
         usuario_casaLayout.setHorizontalGroup(
             usuario_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(usuario_casaLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
                 .addGroup(usuario_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(usuario_casaLayout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton3)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addGroup(usuario_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(usuario_casaLayout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton3))))
+                    .addGroup(usuario_casaLayout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(premium3)))
+                .addContainerGap(76, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, usuario_casaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Dinero2)
+                .addGap(90, 90, 90))
         );
         usuario_casaLayout.setVerticalGroup(
             usuario_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(usuario_casaLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(30, 30, 30)
+                .addComponent(Dinero2)
+                .addGap(18, 18, 18)
                 .addGroup(usuario_casaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addComponent(premium3)
+                .addGap(25, 25, 25))
         );
 
         jTabbedPane2.addTab("Casa", usuario_casa);
@@ -757,6 +701,10 @@ public class Login extends javax.swing.JFrame {
         });
         jScrollPane9.setViewportView(usuario_tabla_micasa_right);
 
+        premium2.setText("Premium");
+
+        Dinero3.setText("jLabel17");
+
         javax.swing.GroupLayout ususario_MicasaLayout = new javax.swing.GroupLayout(ususario_Micasa);
         ususario_Micasa.setLayout(ususario_MicasaLayout);
         ususario_MicasaLayout.setHorizontalGroup(
@@ -764,43 +712,169 @@ public class Login extends javax.swing.JFrame {
             .addGroup(ususario_MicasaLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addGroup(ususario_MicasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ususario_MicasaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(ususario_MicasaLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(boton_comprar_micasa, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(ususario_MicasaLayout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addComponent(premium2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ususario_MicasaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(boton_comprar_micasa, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
+                .addComponent(Dinero3)
+                .addGap(119, 119, 119))
         );
         ususario_MicasaLayout.setVerticalGroup(
             ususario_MicasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ususario_MicasaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(boton_comprar_micasa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Dinero3)
+                .addGap(18, 18, 18)
                 .addGroup(ususario_MicasaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ususario_MicasaLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(boton_comprar_micasa)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addComponent(premium2)
+                .addGap(24, 24, 24))
         );
 
-        jTabbedPane2.addTab("Mi casa", ususario_Micasa);
+        jTabbedPane2.addTab("Puffles", ususario_Micasa);
+
+        usuario_items_tabla_left.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Tipo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(usuario_items_tabla_left);
+
+        Comprar_usuario_items.setText("Comprar");
+        Comprar_usuario_items.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Comprar_usuario_itemsMouseClicked(evt);
+            }
+        });
+
+        usuario_tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Precio", "Tipo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(usuario_tabla);
+
+        Premium4.setText("Premium");
+
+        Dinero1.setText("jLabel17");
+
+        javax.swing.GroupLayout usuario_itemsLayout = new javax.swing.GroupLayout(usuario_items);
+        usuario_items.setLayout(usuario_itemsLayout);
+        usuario_itemsLayout.setHorizontalGroup(
+            usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(usuario_itemsLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(usuario_itemsLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(Comprar_usuario_items, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(76, Short.MAX_VALUE))
+                    .addGroup(usuario_itemsLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
+            .addGroup(usuario_itemsLayout.createSequentialGroup()
+                .addGap(231, 231, 231)
+                .addComponent(Premium4)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, usuario_itemsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Dinero1)
+                .addGap(91, 91, 91))
+        );
+        usuario_itemsLayout.setVerticalGroup(
+            usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(usuario_itemsLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(Dinero1)
+                .addGap(18, 18, 18)
+                .addGroup(usuario_itemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(usuario_itemsLayout.createSequentialGroup()
+                        .addComponent(Comprar_usuario_items)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(Premium4)
+                .addGap(28, 28, 28))
+        );
+
+        jTabbedPane2.addTab("Items", usuario_items);
 
         jugar_juego.setText("Jugar");
+        jugar_juego.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugar_juegoMouseClicked(evt);
+            }
+        });
 
         usuario_tabla_juego.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nombre", "Costo", "Recompensa"
+                "Nombre", "Costo", "Recompensa", "Porcentaje"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -813,28 +887,49 @@ public class Login extends javax.swing.JFrame {
         });
         jScrollPane10.setViewportView(usuario_tabla_juego);
 
+        label_juego.setText("Pinguino");
+
+        dinero_juego.setText("dinero: ");
+
+        premium1.setText("Premium");
+
         javax.swing.GroupLayout usuario_JuegoLayout = new javax.swing.GroupLayout(usuario_Juego);
         usuario_Juego.setLayout(usuario_JuegoLayout);
         usuario_JuegoLayout.setHorizontalGroup(
             usuario_JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, usuario_JuegoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(dinero_juego)
+                .addGap(96, 96, 96))
             .addGroup(usuario_JuegoLayout.createSequentialGroup()
                 .addGroup(usuario_JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(usuario_JuegoLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jugar_juego))
-                    .addGroup(usuario_JuegoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(usuario_JuegoLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(usuario_JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_juego)
+                            .addComponent(jugar_juego)))
+                    .addGroup(usuario_JuegoLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(premium1)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         usuario_JuegoLayout.setVerticalGroup(
             usuario_JuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(usuario_JuegoLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(40, 40, 40)
+                .addComponent(dinero_juego)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_juego)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jugar_juego)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(premium1)
+                .addContainerGap())
         );
 
         jTabbedPane2.addTab("Juego", usuario_Juego);
@@ -947,6 +1042,13 @@ public class Login extends javax.swing.JFrame {
             }
             
             pinguinos.add(usuario);
+            
+            label_juego.setText( "Pinguino: " + usuario.getNombre());
+            
+            dinero_juego.setText("Dinero: " + usuario.getDinero());
+            Dinero1.setText("Dinero: " + usuario.getDinero());
+            Dinero2.setText("Dinero: " + usuario.getDinero());
+            Dinero3.setText("Dinero: " + usuario.getDinero());
             
             JOptionPane.showMessageDialog(this, "Ingresado");
             
@@ -1067,8 +1169,17 @@ public class Login extends javax.swing.JFrame {
         
         datos [1] = usuario_tabla.getValueAt(usuario_tabla.getSelectedRow(), 1);
         
+        
+        
         model.addRow(datos);
         usuario_items_tabla_left.setModel(model);
+        
+        usuario.setDinero(usuario.getDinero() - (Double) datos [1]);
+        
+        dinero_juego.setText("Dinero: " + usuario.getDinero());
+        Dinero1.setText("Dinero: " + usuario.getDinero());
+        Dinero2.setText("Dinero: " + usuario.getDinero());
+        Dinero3.setText("Dinero: " + usuario.getDinero());
     }//GEN-LAST:event_Comprar_usuario_itemsMouseClicked
 
     private void Guardar_items_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Guardar_items_botonActionPerformed
@@ -1084,9 +1195,57 @@ public class Login extends javax.swing.JFrame {
         
         datos [1] = usuario_tabla_micasa_right.getValueAt(usuario_tabla_micasa_right.getSelectedRow(), 1);
         
+        double costo = (Double) usuario_tabla_juego.getValueAt(usuario_tabla_juego.getSelectedRow(), 1);
+        
         model.addRow(datos);
         usuario_tabla_micasa_left.setModel(model);
+        
+        usuario.setDinero(usuario.getDinero() - costo);
+        Dinero1.setText("Dinero: " + usuario.getDinero());
+        Dinero2.setText("Dinero: " + usuario.getDinero());
+        Dinero3.setText("Dinero: " + usuario.getDinero());
+        dinero_juego.setText("Dinero: " + usuario.getDinero());
     }//GEN-LAST:event_boton_comprar_micasaMouseClicked
+
+    private void jugar_juegoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugar_juegoMouseClicked
+        
+        double costo = (Double) usuario_tabla_juego.getValueAt(usuario_tabla_juego.getSelectedRow(), 1);
+        double recompensa = (Double) usuario_tabla_juego.getValueAt(usuario_tabla_juego.getSelectedRow(), 2);
+        int porcentaje = (Integer) usuario_tabla_juego.getValueAt(usuario_tabla_juego.getSelectedRow(), 3);
+        
+        usuario.setDinero(usuario.getDinero() - costo);
+        
+        int numero = 1+random.nextInt(100);
+        
+        if (numero >= porcentaje) {
+            JOptionPane.showMessageDialog(this, "Perdio");
+        }else{
+            JOptionPane.showMessageDialog(this, "Gano");
+            usuario.setDinero(usuario.getDinero() + recompensa);
+        }
+        
+        dinero_juego.setText("Dinero: " + usuario.getDinero());
+        Dinero1.setText("Dinero: " + usuario.getDinero());
+        Dinero2.setText("Dinero: " + usuario.getDinero());
+        Dinero3.setText("Dinero: " + usuario.getDinero());
+    }//GEN-LAST:event_jugar_juegoMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        DefaultTableModel model = (DefaultTableModel) usuario_tabla_casas.getModel();
+        
+        Object[]datos = new Object[5];
+        
+        datos [0] = usuario_tabla_casas.getValueAt(usuario_tabla_casas.getSelectedRow(), 2);
+        
+        double costo = (Double) datos [0];
+        
+        usuario.setDinero(usuario.getDinero() - (Double) datos [0]);
+        
+        dinero_juego.setText("Dinero: " + usuario.getDinero());
+        Dinero1.setText("Dinero: " + usuario.getDinero());
+        Dinero2.setText("Dinero: " + usuario.getDinero());
+        Dinero3.setText("Dinero: " + usuario.getDinero());
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1184,10 +1343,14 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Casa;
     private javax.swing.JButton Comprar_usuario_items;
+    private javax.swing.JLabel Dinero1;
+    private javax.swing.JLabel Dinero2;
+    private javax.swing.JLabel Dinero3;
     private javax.swing.JButton Guardar_items_boton;
     private javax.swing.JPanel Items;
     private javax.swing.JPanel Juego;
     private javax.swing.JFormattedTextField Precio_field_items;
+    private javax.swing.JButton Premium4;
     private javax.swing.JPanel Puffles;
     private javax.swing.JComboBox<String> Tipo_items_ComboBox;
     private javax.swing.JFrame admin_frame;
@@ -1199,6 +1362,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField casa_x_field;
     private javax.swing.JFormattedTextField casa_y_field;
     private javax.swing.JPasswordField contra_field;
+    private javax.swing.JLabel dinero_juego;
     private javax.swing.JButton entrar_boton;
     private javax.swing.JButton guardar_casa_boton;
     private javax.swing.JButton guardar_puffles;
@@ -1241,8 +1405,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jugar_juego;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label2;
+    private javax.swing.JLabel label_juego;
     private javax.swing.JTextField nombre_field;
     private javax.swing.JTextField nombre_items_textfield;
+    private javax.swing.JButton premium1;
+    private javax.swing.JButton premium2;
+    private javax.swing.JButton premium3;
     private javax.swing.JTextField puffles_nombre_field;
     private javax.swing.JFormattedTextField puffles_precio_field;
     private javax.swing.JTable tabla_casa;
